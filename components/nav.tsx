@@ -7,6 +7,21 @@ const Nav = () => {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
+    const ToggleThemeIcon = () => {
+        const currentTheme = theme === 'light' ? true : 'dark';
+        if (currentTheme === 'dark') {
+            return (
+                <button
+                    aria-label="Toggle Theme"
+                    className="flex justify-center items-center  ">
+                    <IoSunny className="text-white" />
+                </button>
+            );
+        } else {
+            return <IoMoon className="" onClick={() => setTheme('dark')} />;
+        }
+    };
+
     //avoid hydration mismatch
     useEffect(() => {
         setMounted(true);
