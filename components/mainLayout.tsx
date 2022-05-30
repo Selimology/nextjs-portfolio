@@ -5,10 +5,9 @@ type Props = PropsWithChildren<{}>;
 
 const MainLayout = ({ children }: Props) => {
     return (
-        <div className="container">
+        <div className="">
             <Nav />
             {children}
-            {/* <Footer /> */}
         </div>
     );
 };
