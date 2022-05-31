@@ -6,7 +6,7 @@ type Props = PropsWithChildren<{}>;
 
 const MainLayout = ({ children }: Props) => {
     return (
-        <div className="">
+        <div className="container w-full mx-auto  flex flex-col max-w-2xl ">
             <Nav />
             {children}
             <Footer />
