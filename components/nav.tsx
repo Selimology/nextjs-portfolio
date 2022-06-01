@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { IoMoon, IoSunny } from 'react-icons/io5';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
-import MobileMenu from './mobileMenu';
+import MobileNav from './MobileNav';
 
 const Nav = () => {
     const [mounted, setMounted] = useState(false);
@@ -15,9 +15,16 @@ const Nav = () => {
 
     return (
         <div className=" w-full py-6 flex justify-center">
-            <nav className=" flex items-center w-full justify-evenly md:max-w-2xl md:justify-between min-w-min">
+            <nav
+                aria-labelledby="navigationHeader"
+                className=" flex items-center w-full justify-evenly md:max-w-2xl md:justify-between min-w-min">
+                {/* This is for screen readers */}
+                <h2 id="navigationHeader" className="sr-only">
+                    Navigation
+                </h2>
+
                 <div className="visible md:hidden">
-                    <MobileMenu />
+                    <MobileNav />
                 </div>
                 <div className="flex md:flex-1">
                     <Link href="/">
